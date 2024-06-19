@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Money Manager</title>
+</head>
+<body>
+
+<h2>Money Manager</h2>
+<ul>
+    <li><a th:href="@{/budgets/list}"> List of Budget</a></li>
+    <li><a th:href="@{/budgets/signup}"> Add Budget</a></li>
+    <li><a th:href="@{/budgets/update}"> Update Budget</a></li>
+    <li><a th:href="@{/budgets/delete}"> Delete Budget</a></li>
+    <li><a th:href="@{/trans/list2}"> List of Transactions</a></li>
+    <li><a th:href="@{/trans/signup}"> Add Transaction</a></li>
+    <li><a th:href="@{/trans/update}"> Update Transaction</a></li>
+    <li><a th:href="@{/trans/delete}"> Delete Transaction</a></li>
+</ul>
+
+</body>
+</html>

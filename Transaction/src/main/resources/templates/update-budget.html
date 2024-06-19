@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <title>Update Budget</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+          crossorigin="anonymous">
+
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">UPDATE BUDGET >> </a>
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href = "#" th:href ="@{/}">Main Menu</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container my-5">
+    <h3> Update Budget</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-8">
+                <form action="#"
+                      th:action="@{/budgets/update/{id}(id=${budgets.budgetID})}"
+                      th:object="${budgets}" th:method="post">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="budgetId" class="col-form-label">Budget Id</label> <input
+                                type="text" th:field="*{budgetID}" class="form-control" id="budgetId"
+                                placeholder="Budget Id" readonly> <span
+                                th:if="${#fields.hasErrors('budgetID')}" th:errors="*{budgetID}"
+                                class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="period" class="col-form-label">Period</label> <input
+                                type="text" th:field="*{period}" class="form-control" id="period"
+                                placeholder="Period"> <span
+                                th:if="${#fields.hasErrors('period')}" th:errors="*{period}"
+                                class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="startDate" class="col-form-label">Start Date</label> <input
+                                type="text" th:field="*{startDate}" class="form-control" id="startDate"
+                                placeholder="Start Date"> <span
+                                th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"
+                                class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="endDate" class="col-form-label">End Date</label> <input
+                                type="text" th:field="*{endDate}" class="form-control" id="endDate"
+                                placeholder="End Date"> <span
+                                th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"
+                                class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="budgetAmount" class="col-form-label">Budget Amount</label> <input
+                                type="text" th:field="*{budgetAmount}" class="form-control" id="budgetAmount"
+                                placeholder="Budget Amount"> <span
+                                th:if="${#fields.hasErrors('budgetAmount')}" th:errors="*{budgetAmount}"
+                                class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <input type="submit" class="btn btn-success"
+                                   value="Update Budget">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
