@@ -14,7 +14,7 @@ public class Budget {
     private Integer budgetID;
 
     @OneToMany(mappedBy = "budget",cascade = CascadeType.ALL)
-    private Set<com.csc3402.project.budget3.model.Transaction> transactions;
+    private Set<com.csc3402.project.transaction.model.Transaction> transactions;
 
     @Column(name = "period")
     private String period; // Changed to String
