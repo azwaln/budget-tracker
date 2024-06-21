@@ -69,6 +69,12 @@
                         <input type="date" th:field="*{endDate}" class="form-control" id="endDate" readonly>
                         <span th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}" class="text-danger"></span>
                     </div>
+                    <div class="form-group col-md-8">
+                        <label for="budgetAmount" class="col-form-label">Budget Amount</label>
+                        <input type="number" th:field="*{budgetAmount}" class="form-control" id="budgetAmount">
+                        <span th:if="${#fields.hasErrors('budgetAmount')}" th:errors="*{budgetAmount}" class="text-danger"></span>
+                    </div>
+
                 </div>
                 <div class="container">
                     <input type="submit" id="submitButton" class="btn btn-success" th:value="Save"/>

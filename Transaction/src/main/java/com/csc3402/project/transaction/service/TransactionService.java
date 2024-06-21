@@ -11,12 +11,12 @@ public interface TransactionService {
     List<Transaction> listAllTransactions();
 
     Transaction addNewTransaction(Transaction transaction);
-    Optional<Transaction> findTransactionById(Integer transID);
 
-    Transaction QueryTransactionById(Integer transID);
-    Transaction updateTransaction(Transaction transaction);
+    Optional<Transaction> findTransactionById(Integer transaction);
+
+    void updateTransaction(Transaction transaction);
 
     void deleteTransaction(Transaction transaction);
-
-
 }
+
+

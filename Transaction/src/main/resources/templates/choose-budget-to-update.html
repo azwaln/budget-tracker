@@ -14,19 +14,18 @@
           href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
           integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
           crossorigin="anonymous">
-
 </head>
 <body>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="#"> UPDATE BUDGET >> </a>
+    <a class="navbar-brand" href="#">UPDATE BUDGET >> </a>
     <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href = "#" th:href ="@{/}">Main Menu</a>
+                <a class="nav-link" href="#" th:href="@{/}">Main Menu</a>
             </li>
         </ul>
     </div>
@@ -47,14 +46,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="budget : ${budget}">
+                <tr th:each="budget : ${budgets}">
                     <td th:text="${budget.budgetID}"></td>
                     <td th:text="${budget.period}"></td>
                     <td th:text="${budget.startDate}"></td>
                     <td th:text="${budget.endDate}"></td>
                     <td th:text="${budget.budgetAmount}"></td>
                     <td><a th:href="@{/budgets/edit/{id}(id=${budget.budgetID})}"
-                           class="btn btn-success"><i class="fas fa-edit ml-2"></i></a></td>
+                           class="btn btn-success">
+                        <i class="fas fa-edit ml-2"></i></a></td>
                 </tr>
                 </tbody>
             </table>

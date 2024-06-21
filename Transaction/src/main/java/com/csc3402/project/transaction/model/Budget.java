@@ -2,35 +2,29 @@ package com.csc3402.project.transaction.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
 public class Budget {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "budget_ID")
+    @Column(name = "budgetID")
     private Integer budgetID;
 
-    @OneToMany(mappedBy = "budget",cascade = CascadeType.ALL)
-    private Set<com.csc3402.project.transaction.model.Transaction> transactions;
-
     @Column(name = "period")
-    private String period; // Changed to String
+    private String period;
 
-    @Column(name = "start_date")
+    @Column(name = "startDate")
     private LocalDate startDate;
 
-    @Column(name = "end_date")
+    @Column(name = "endDate")
     private LocalDate endDate;
 
-    @Column(name = "budget_amount")
+    @Column(name = "budgetAmount")
     private Integer budgetAmount;
-    //@OneToMany(mappedBy = "budget",cascade = CascadeType.ALL)
-    //private List<Expense> expenses;
 
-    // Constructor
+
+    // Constructors
     public Budget() {
     }
 
@@ -82,13 +76,14 @@ public class Budget {
         this.budgetAmount = budgetAmount;
     }
 
+    // toString method
     @Override
     public String toString() {
         return "Budget{" +
                 "budgetID=" + budgetID +
                 ", period='" + period + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
+                ", startDate='" + startDate + '\'' +
+                ", endDate='" + endDate + '\'' +
                 ", budgetAmount=" + budgetAmount +
                 '}';
     }

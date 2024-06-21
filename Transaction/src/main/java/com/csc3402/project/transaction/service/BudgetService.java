@@ -8,13 +8,10 @@ import java.util.Optional;
 
 @Service
 public interface BudgetService {
-    List<Budget> listAllBudget();
-    Budget addnewBudget(Budget budget);
-
+    List<Budget> listAllBudgets();
+    Budget addNewBudget(Budget budget);
     Optional<Budget> findBudgetById(Integer budgetId);
-    Budget updateBudget(Budget budget);
-    public void deleteBudget(Budget budget);
-
-
-
+    void updateBudget(Budget budget);
+    void deleteBudget(Budget budget);
 }
+

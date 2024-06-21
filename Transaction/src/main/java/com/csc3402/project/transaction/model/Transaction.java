@@ -3,33 +3,36 @@ package com.csc3402.project.transaction.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import java.util.Date;
+
 @Entity
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="trans_ID")
-    private Integer transID;
+    @Column(name = "transactionID")
+    private Integer transactionID;
+    @Column(name = "date")
+    private LocalDate date;
+    @Column(name = "amount")
+    private Double amount;
 
     @ManyToOne
-    @JoinColumn(name="budget_ID")
-    private Budget budget;
+    @JoinColumn(name = "categoryID")
+    private Category category;
 
-    @Column(name="trans_date")
-    private LocalDate date;
-
-    @Column(name="amount")
-    private Integer amount;
-
-    @Column(name="note")
-    private String note;
-
-    public Integer getTransID() {
-        return transID;
+    public Transaction() {
     }
 
-    public void setTransID(Integer transID) {
-        this.transID = transID;
+    public Transaction(LocalDate date, Double amount) {
+        this.date = date;
+        this.amount = amount;
+    }
+
+    public Integer getTransactionID() {
+        return transactionID;
+    }
+
+    public void setTransactionID(Integer transactionID) {
+        this.transactionID = transactionID;
     }
 
     public LocalDate getDate() {
@@ -40,39 +43,29 @@ public class Transaction {
         this.date = date;
     }
 
-    public Integer getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    public String getNote() {
-        return note;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setNote(String note) {
-        this.note = note;
-    }
-
-    public Transaction() {
-    }
-
-    public Transaction(Integer transID, LocalDate date, Integer amount,String note) {
-        this.transID = transID;
-        this.date = date;
-        this.amount = amount;
-        this.note = note;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @Override
     public String toString() {
         return "Transaction{" +
-                "transID=" + transID +
+                "transactionID=" + transactionID +
                 ", date=" + date +
                 ", amount=" + amount +
-                ", note='" + note + '\'' +
+                ", category=" + category +
                 '}';
     }
 }
