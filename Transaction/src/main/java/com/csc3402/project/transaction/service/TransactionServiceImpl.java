@@ -1,5 +1,6 @@
 package com.csc3402.project.transaction.service;
 
+import com.csc3402.project.transaction.model.Budget;
 import com.csc3402.project.transaction.repository.TransactionRepository;
 import com.csc3402.project.transaction.model.Transaction;
 import org.springframework.stereotype.Repository;
@@ -27,6 +28,10 @@ public class TransactionServiceImpl implements TransactionService {
         return transactionRepository.save(transaction);
     }
 
+    @Override
+    public List<Transaction> findTransactionsByBudget(Budget budget) {
+        return transactionRepository.findByBudget(budget);
+    }
 
     public Optional<Transaction> findTransactionById(Integer transactionId) {
         return transactionRepository.findById(transactionId);

@@ -11,6 +11,9 @@ public class Budget {
     @Column(name = "budgetID")
     private Integer budgetID;
 
+    @Column(name = "budgetName")
+    private String budgetName;
+
     @Column(name = "period")
     private String period;
 
@@ -23,12 +26,16 @@ public class Budget {
     @Column(name = "budgetAmount")
     private Integer budgetAmount;
 
+    @OneToMany(mappedBy = "budget", cascade = CascadeType.ALL)
+    private Set<Transaction> transactions;
+
 
     // Constructors
     public Budget() {
     }
 
-    public Budget(String period, LocalDate startDate, LocalDate endDate, Integer budgetAmount) {
+    public Budget(String budgetName, String period, LocalDate startDate, LocalDate endDate, Integer budgetAmount) {
+        this.budgetName = budgetName;
         this.period = period;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -36,6 +43,15 @@ public class Budget {
     }
 
     // Getters and Setters
+
+    public String getBudgetName() {
+        return budgetName;
+    }
+
+    public void setBudgetName(String budgetName) {
+        this.budgetName = budgetName;
+    }
+
     public Integer getBudgetID() {
         return budgetID;
     }
@@ -76,14 +92,22 @@ public class Budget {
         this.budgetAmount = budgetAmount;
     }
 
-    // toString method
+    public Set<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(Set<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
     @Override
     public String toString() {
         return "Budget{" +
                 "budgetID=" + budgetID +
+                ", budgetName='" + budgetName + '\'' +
                 ", period='" + period + '\'' +
-                ", startDate='" + startDate + '\'' +
-                ", endDate='" + endDate + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
                 ", budgetAmount=" + budgetAmount +
                 '}';
     }

@@ -3,6 +3,8 @@ package com.csc3402.project.transaction.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Transaction {
@@ -19,12 +21,18 @@ public class Transaction {
     @JoinColumn(name = "categoryID")
     private Category category;
 
+    @ManyToOne
+    @JoinColumn(name = "budgetID")
+    private Budget budget;
+
     public Transaction() {
     }
 
-    public Transaction(LocalDate date, Double amount) {
+    public Transaction(LocalDate date, Double amount, Category category, Budget budget) {
         this.date = date;
         this.amount = amount;
+        this.category = category;
+        this.budget = budget;
     }
 
     public Integer getTransactionID() {
@@ -59,6 +67,14 @@ public class Transaction {
         this.category = category;
     }
 
+    public Budget getBudget() {
+        return budget;
+    }
+
+    public void setBudget(Budget budget) {
+        this.budget = budget;
+    }
+
     @Override
     public String toString() {
         return "Transaction{" +
@@ -66,6 +82,7 @@ public class Transaction {
                 ", date=" + date +
                 ", amount=" + amount +
                 ", category=" + category +
+                ", budgetID=" + budget +
                 '}';
     }
 }
