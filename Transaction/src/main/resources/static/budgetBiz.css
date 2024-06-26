@@ -23,3 +23,22 @@ a > button.btn {
 a > button.btn:hover {
     background-color: #0d0d0d;
 }
+
+.row {
+    margin-bottom: 10px;
+}
+
+.btn-sm {
+    margin-right: 5px;
+}
+
+.button-group {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-group a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+}
