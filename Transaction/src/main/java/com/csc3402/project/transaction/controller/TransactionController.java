@@ -59,7 +59,7 @@ public class TransactionController {
             return "add-transaction";
         }
 
-        return "redirect:/transactions/list" + budgetID;
+        return STR."redirect:/transactions/list\{budgetID}";
     }
 
     @GetMapping("/update")
