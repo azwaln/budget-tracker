@@ -13,5 +13,6 @@ public interface BudgetService {
     Optional<Budget> findBudgetById(Integer budgetId);
     void updateBudget(Budget budget);
     void deleteBudget(Budget budget);
-}
 
+
+}

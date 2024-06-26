@@ -22,7 +22,7 @@
                 <a class="nav-link" href="#" th:href="@{/}">Main Menu</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/transactions/list" th:href="@{/transactions/list}">Back to Transaction List</a>
+                <a class="nav-link" href="/budgets/list" th:href="@{/budgets/list}">Back to list of budget</a>
             </li>
         </ul>
     </div>
@@ -32,7 +32,7 @@
     <h3>Add Transaction</h3>
     <div class="card">
         <div class="card-body">
-            <form action="#" th:action="@{/transactions/add}" th:object="${transaction}" method="post">
+            <form action="#" th:action="@{/transactions/add/{budgetID}(budgetID=${budget.budgetID})}" th:object="${transaction}" method="post">
                 <div class="form-group">
                     <label for="date">Date</label>
                     <input type="date" th:field="*{date}" class="form-control" id="date"/>

@@ -21,5 +21,3 @@ public interface TransactionService {
 
     void deleteTransaction(Transaction transaction);
 }
-
-

@@ -31,6 +31,7 @@
             <thead>
             <tr>
                 <th>Budget Id</th>
+                <th> Budget Name</th>
                 <th>Period</th>
                 <th>Start Date</th>
                 <th>End Date</th>
@@ -44,6 +45,7 @@
             </tr>
             <tr th:each="budget : ${budgets}">
                 <td th:text="${budget.budgetID}"></td>
+                <td th:text="${budget.budgetName}"></td>
                 <td th:text="${budget.period}"></td>
                 <td th:text="${budget.startDate}"></td>
                 <td th:text="${budget.endDate}"></td>
@@ -53,7 +55,7 @@
                         <li><a href="@{'/transactions/add/" th:href="@{'/transactions/signup/' + ${budget.budgetID}}"> Add Transaction</a></li>
                         <li><a href="@{'/transactions/list/" th:href="@{'/transactions/list/' + ${budget.budgetID}}"> List Transaction</a></li>
                         <li><a href="@{'/transactions/update/" th:href="@{/transactions/update}"> Update Transaction</a></li>
-                        <li><a href="@{'/transactions/delete/" th:href="@{/transactions/delete}"> Delete Transaction</a></li>
+                        <li><a href="@{'/transactions/delete/" th:href="@{'/transactions/delete/' + ${budget.budgetID}}"> Delete Transaction</a></li>
                     </ul>
                 </td>
             </tr>
@@ -61,6 +63,3 @@
         </table>
     </div>
 </div>
-
-</body>
-</html>

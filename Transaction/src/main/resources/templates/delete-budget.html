@@ -38,6 +38,7 @@
                 <thead>
                 <tr>
                     <th>Budget Id</th>
+                    <th>BudgetName</th>
                     <th>Period</th>
                     <th>Start Date</th>
                     <th>End Date</th>
@@ -48,6 +49,7 @@
                 <tbody>
                 <tr th:each="budget : ${budget}">
                     <td th:text="${budget.budgetId}"></td>
+                    <td th:text="${budget.budgetName}"></td>
                     <td th:text="${budget.period}"></td>
                     <td th:text="${budget.startDate}"></td>
                     <td th:text="${budget.endDate}"></td>

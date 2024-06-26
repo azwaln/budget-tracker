@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/budgets")
-public class BudgetController {
+public class  BudgetController {
     private final BudgetService budgetService;
 
     public BudgetController(BudgetService budgetService) {

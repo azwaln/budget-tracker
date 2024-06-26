@@ -33,6 +33,7 @@ public class TransactionServiceImpl implements TransactionService {
         return transactionRepository.findByBudget(budget);
     }
 
+
     public Optional<Transaction> findTransactionById(Integer transactionId) {
         return transactionRepository.findById(transactionId);
     }
