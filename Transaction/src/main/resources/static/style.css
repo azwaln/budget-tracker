@@ -6084,6 +6084,8 @@ progress {
     padding-top: 45px;
     transition: all 0.5s ease;
     z-index: 99;
+    background-color: white;
+    padding-bottom: 20px;
 }
 .main-header .search {
     max-width: 140px;

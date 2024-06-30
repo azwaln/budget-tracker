@@ -32,6 +32,15 @@ a > button.btn:hover {
     margin-right: 5px;
 }
 
+.custom-navbar {
+    background-color: #f69a2c; /* Example custom color */
+    color: white;
+}
+
+.custom-navbar .nav-link {
+    color: white;
+}
+
 .button-group {
     text-align: center;
     margin-top: 20px;

@@ -25,6 +25,7 @@ public class SpringSecurity {
                         .requestMatchers(AntPathRequestMatcher.antMatcher("/h2-console/**")).permitAll()
                         .requestMatchers("/registration/**").permitAll()
                         .requestMatchers("/login/**").permitAll()
+                        .requestMatchers("/**", "/index").permitAll()
                         .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
                         .requestMatchers("/admin/**").hasAnyAuthority("ADMIN")
                         .anyRequest().authenticated()
@@ -32,7 +33,7 @@ public class SpringSecurity {
                 .formLogin((form) -> form
                         .loginPage("/login")
                         .loginProcessingUrl("/login")
-                        .defaultSuccessUrl("/user/")
+                        .defaultSuccessUrl("/budgets/list")
                         .permitAll()
                 )
                 .logout((logout) -> logout.permitAll())
